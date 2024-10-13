@@ -20,8 +20,11 @@ function SearchResults() {
   }
 
   return (
-    <div className="px-4 grid auto-rows-auto grid-cols-1 gap-2">
-      <Link to={`${pathname}&search=`} className="mb-3">
+    <div className="px-4 flex flex-col auto-rows-auto gap-2">
+      <Link
+        to={`${pathname}&search=`}
+        className="mt-1 w-fit h-fit hover:decoration-from-font hover:decoration-current hover:underline"
+      >
         Clear Search
       </Link>
       {results.Search.map((movie) => (
