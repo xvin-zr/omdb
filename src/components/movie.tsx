@@ -13,8 +13,13 @@ export default function Movie() {
   }
 
   return (
-    <section className="flex gap-2 flex-col mt-2">
-      <Link to="/">Clear Movie</Link>
+    <section className="flex gap-2 flex-col">
+      <Link
+        to="/"
+        className="w-fit h-fit hover:decoration-from-font hover:decoration-current hover:underline"
+      >
+        Clear Movie
+      </Link>
       <article>
         <Image src={movie.Poster} alt={movie.Title} className="" />
       </article>

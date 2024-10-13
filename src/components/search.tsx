@@ -15,14 +15,15 @@ function Search() {
   );
 
   return (
-    <form className="flex gap-4 items-center" onSubmit={handleSubmit}>
+    <form className="flex gap-4 items-center mb-2" onSubmit={handleSubmit}>
       <label htmlFor="search">Search for a movie</label>
       <input
         type="text"
         name="search"
         id="search"
-        className="w-full px-2 h-8 shadow border"
+        className="w-full px-2 h-8 shadow border placeholder:text-zinc-400"
         defaultValue={search}
+        placeholder="Movie Title"
         required
       />
       <button type="submit" className="">

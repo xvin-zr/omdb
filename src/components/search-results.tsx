@@ -1,11 +1,9 @@
 import { useSearch } from '../hooks/use-api';
-import { useLocation } from '../hooks/use-location';
 import Link from './link';
 import Loading from './loading';
 
 function SearchResults() {
   const [results, isPending] = useSearch();
-  const { pathname } = useLocation();
 
   if (isPending) {
     return <Loading />;
@@ -22,8 +20,8 @@ function SearchResults() {
   return (
     <div className="px-4 flex flex-col auto-rows-auto gap-2">
       <Link
-        to={`${pathname}&search=`}
-        className="mt-1 w-fit h-fit hover:decoration-from-font hover:decoration-current hover:underline"
+        to={`/?search=`}
+        className="w-fit h-fit hover:decoration-from-font hover:decoration-current hover:underline"
       >
         Clear Search
       </Link>
