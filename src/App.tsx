@@ -2,14 +2,17 @@ import { Suspense } from 'react';
 import './App.css';
 import Loading from './components/loading';
 import Search from './components/search';
+import SearchResults from './components/search-results';
 
 function App() {
   return (
     <>
       <main className="flex flex-col bg-zinc-50 min-h-screen p-4">
         <Search />
-        <section className="grid gap-4">
-          <Suspense fallback={<Loading />}></Suspense>
+        <section className="grid gap-4 md:grid-cols-2">
+          <Suspense fallback={<Loading />}>
+            <SearchResults />
+          </Suspense>
         </section>
       </main>
     </>

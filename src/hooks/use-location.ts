@@ -80,6 +80,15 @@ export function useSearchParams(param: string) {
   return [searchParams.get(param) ?? '', setParam] as const;
 }
 
+/**
+ * Extracts path parameters from the current URL.
+ *
+ * @param path - The path to extract parameters from. Defaults to the current window location pathname.
+ * @param param - The specific parameter to extract. Optional.
+ *
+ * @returns If `param` is provided, returns the value of the specified parameter as a string or undefined.
+ * If `param` is not provided, returns an object containing all the path parameters as key-value pairs.
+ */
 export function usePathParams<T extends string | undefined>(
   path: string = window.location.pathname,
   param?: T
